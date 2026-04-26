@@ -1,231 +1,255 @@
 <!DOCTYPE HTML>
 <html lang="en">
-	<head>
-		<title>Grandiflora Wine Garden</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width,initial-scale=1" />
-		<meta name="color-scheme" content="light only" />
-		<meta name="description" content="Grandiflora Wine Garden — Norfolk, VA. Thank you for five beautiful years." />
-		<meta property="og:site_name" content="Grandiflora Wine Garden" />
-		<meta property="og:title" content="Grandiflora Wine Garden" />
-		<meta property="og:type" content="website" />
-		<meta property="og:description" content="Thank you for five beautiful years in Chelsea, Norfolk." />
-		<link href="https://fonts.googleapis.com/css2?display=swap&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700" rel="stylesheet" type="text/css" />
-		<style>
-			*, *:before, *:after {
-				box-sizing: border-box;
-				margin: 0;
-				padding: 0;
-			}
 
-			:root {
-				--cream: #f5f0e8;
-				--gold: #c9a96e;
-				--dark: #1a1410;
-				--text: #e8e0d0;
-				--muted: rgba(232, 224, 208, 0.6);
-			}
+<head>
+	<title>Grandiflora Wine Garden</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<meta name="color-scheme" content="light only" />
+	<meta name="description" content="Grandiflora Wine Garden — Norfolk, VA. Thank you for five beautiful years." />
+	<meta property="og:site_name" content="Grandiflora Wine Garden" />
+	<meta property="og:title" content="Grandiflora Wine Garden" />
+	<meta property="og:type" content="website" />
+	<meta property="og:description" content="Thank you for five beautiful years in Chelsea, Norfolk." />
+	<link
+		href="https://fonts.googleapis.com/css2?display=swap&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700"
+		rel="stylesheet" type="text/css" />
+	<style>
+		*,
+		*:before,
+		*:after {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
 
-			html, body {
-				height: 100%;
-				min-height: 100vh;
-				font-family: 'Playfair Display', Georgia, serif;
-				color: var(--text);
-				overflow-x: hidden;
-			}
+		:root {
+			--cream: #f5f0e8;
+			--gold: #c9a96e;
+			--dark: #1a1410;
+			--text: #e8e0d0;
+			--muted: rgba(232, 224, 208, 0.6);
+		}
 
-			/* Preserve existing background exactly */
-			body:before {
-				content: '';
-				display: block;
-				position: fixed;
-				inset: 0;
-				background-image: radial-gradient(50% 50% at 50% 50%, rgba(0,0,0,0.851) 0%, transparent 60%), url('assets/images/bg.jpg');
-				background-position: 0% 0%, top right;
-				background-repeat: repeat, repeat-y;
-				background-size: cover, cover;
-				background-color: #161208;
-				z-index: 0;
-			}
+		html,
+		body {
+			height: 100%;
+			min-height: 100vh;
+			font-family: 'Playfair Display', Georgia, serif;
+			color: var(--text);
+			overflow-x: hidden;
+		}
 
-			body:after {
-				content: '';
-				display: block;
-				position: fixed;
-				inset: 0;
-				background: rgba(15, 10, 5, 0.55);
-				z-index: 1;
-				pointer-events: none;
-			}
+		/* Preserve existing background exactly */
+		body:before {
+			content: '';
+			display: block;
+			position: fixed;
+			inset: 0;
+			background-image: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.851) 0%, transparent 60%), url('assets/images/bg.jpg');
+			background-position: 0% 0%, top right;
+			background-repeat: repeat, repeat-y;
+			background-size: cover, cover;
+			background-color: #161208;
+			z-index: 0;
+		}
 
+		body:after {
+			content: '';
+			display: block;
+			position: fixed;
+			inset: 0;
+			background: rgba(15, 10, 5, 0.55);
+			z-index: 1;
+			pointer-events: none;
+		}
+
+		#wrapper {
+			position: relative;
+			z-index: 2;
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 3rem 1.5rem;
+		}
+
+		.card {
+			max-width: 640px;
+			width: 100%;
+			text-align: center;
+			opacity: 0;
+			transform: translateY(18px);
+			animation: rise 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
+		}
+
+		@keyframes rise {
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		.wordmark {
+			font-size: clamp(2.8rem, 9vw, 4.6rem);
+			font-weight: 400;
+			font-family: 'Playfair Display', Georgia, serif;
+			letter-spacing: 0.02em;
+			line-height: 1.1;
+			color: var(--cream);
+			margin-bottom: 0.55rem;
+		}
+
+		.subtitle {
+			font-size: clamp(0.72rem, 1.8vw, 0.82rem);
+			font-weight: 400;
+			font-style: normal;
+			letter-spacing: 0.3em;
+			text-transform: uppercase;
+			color: var(--gold);
+			margin-bottom: 2.6rem;
+		}
+
+		.rule {
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+			margin: 0 auto 2.4rem;
+			max-width: 300px;
+		}
+
+		.rule:before,
+		.rule:after {
+			content: '';
+			flex: 1;
+			height: 1px;
+			background: linear-gradient(90deg, transparent, var(--gold), transparent);
+		}
+
+		.rule-diamond {
+			width: 6px;
+			height: 6px;
+			background: var(--gold);
+			transform: rotate(45deg);
+			flex-shrink: 0;
+		}
+
+		.farewell {
+			font-size: clamp(0.98rem, 2.4vw, 1.12rem);
+			font-weight: 400;
+			line-height: 1.9;
+			color: var(--text);
+			margin-bottom: 1.5rem;
+		}
+
+		.farewell em {
+			font-style: italic;
+			color: var(--cream);
+		}
+
+		.farewell-sign {
+			font-size: 1rem;
+			font-style: italic;
+			color: var(--muted);
+			margin-bottom: 2.8rem;
+		}
+
+		.coming-soon-label {
+			font-size: 0.68rem;
+			letter-spacing: 0.32em;
+			text-transform: uppercase;
+			color: var(--gold);
+			margin-bottom: 0.75rem;
+		}
+
+		.coming-soon-text {
+			font-size: clamp(0.9rem, 2vw, 1rem);
+			font-style: italic;
+			color: var(--muted);
+			margin-bottom: 2.4rem;
+		}
+
+		.ig-link {
+			display: inline-flex;
+			align-items: center;
+			gap: 0.55rem;
+			font-family: 'Playfair Display', Georgia, serif;
+			font-size: 0.8rem;
+			letter-spacing: 0.2em;
+			text-transform: uppercase;
+			color: var(--gold);
+			text-decoration: none;
+			border: 1px solid rgba(201, 169, 110, 0.4);
+			padding: 0.7rem 1.5rem;
+			transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+		}
+
+		.ig-link:hover {
+			background: rgba(201, 169, 110, 0.1);
+			border-color: rgba(201, 169, 110, 0.8);
+			color: var(--cream);
+		}
+
+		.ig-link svg {
+			width: 14px;
+			height: 14px;
+			fill: currentColor;
+			flex-shrink: 0;
+		}
+
+		@media (max-width: 480px) {
 			#wrapper {
-				position: relative;
-				z-index: 2;
-				min-height: 100vh;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				padding: 3rem 1.5rem;
+				padding: 2rem 1.25rem;
+				align-items: flex-start;
+				padding-top: 12vh;
 			}
+		}
+	</style>
+</head>
 
-			.card {
-				max-width: 640px;
-				width: 100%;
-				text-align: center;
-				opacity: 0;
-				transform: translateY(18px);
-				animation: rise 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
-			}
-
-			@keyframes rise {
-				to { opacity: 1; transform: translateY(0); }
-			}
-
-			.wordmark {
-				font-size: clamp(2.8rem, 9vw, 4.6rem);
-				font-weight: 400;
-				font-style: italic;
-				letter-spacing: 0.02em;
-				line-height: 1.1;
-				color: var(--cream);
-				margin-bottom: 0.55rem;
-			}
-
-			.subtitle {
-				font-size: clamp(0.72rem, 1.8vw, 0.82rem);
-				font-weight: 400;
-				font-style: normal;
-				letter-spacing: 0.3em;
-				text-transform: uppercase;
-				color: var(--gold);
-				margin-bottom: 2.6rem;
-			}
-
-			.rule {
-				display: flex;
-				align-items: center;
-				gap: 1rem;
-				margin: 0 auto 2.4rem;
-				max-width: 300px;
-			}
-			.rule:before, .rule:after {
-				content: '';
-				flex: 1;
-				height: 1px;
-				background: linear-gradient(90deg, transparent, var(--gold), transparent);
-			}
-			.rule-diamond {
-				width: 6px;
-				height: 6px;
-				background: var(--gold);
-				transform: rotate(45deg);
-				flex-shrink: 0;
-			}
-
-			.farewell {
-				font-size: clamp(0.98rem, 2.4vw, 1.12rem);
-				font-weight: 400;
-				line-height: 1.9;
-				color: var(--text);
-				margin-bottom: 1.5rem;
-			}
-
-			.farewell em {
-				font-style: italic;
-				color: var(--cream);
-			}
-
-			.farewell-sign {
-				font-size: 1rem;
-				font-style: italic;
-				color: var(--muted);
-				margin-bottom: 2.8rem;
-			}
-
-			.coming-soon-label {
-				font-size: 0.68rem;
-				letter-spacing: 0.32em;
-				text-transform: uppercase;
-				color: var(--gold);
-				margin-bottom: 0.75rem;
-			}
-
-			.coming-soon-text {
-				font-size: clamp(0.9rem, 2vw, 1rem);
-				font-style: italic;
-				color: var(--muted);
-				margin-bottom: 2.4rem;
-			}
-
-			.ig-link {
-				display: inline-flex;
-				align-items: center;
-				gap: 0.55rem;
-				font-family: 'Playfair Display', Georgia, serif;
-				font-size: 0.8rem;
-				letter-spacing: 0.2em;
-				text-transform: uppercase;
-				color: var(--gold);
-				text-decoration: none;
-				border: 1px solid rgba(201, 169, 110, 0.4);
-				padding: 0.7rem 1.5rem;
-				transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
-			}
-
-			.ig-link:hover {
-				background: rgba(201, 169, 110, 0.1);
-				border-color: rgba(201, 169, 110, 0.8);
-				color: var(--cream);
-			}
-
-			.ig-link svg {
-				width: 14px;
-				height: 14px;
-				fill: currentColor;
-				flex-shrink: 0;
-			}
-
-			@media (max-width: 480px) {
-				#wrapper {
-					padding: 2rem 1.25rem;
-					align-items: flex-start;
-					padding-top: 12vh;
-				}
-			}
-		</style>
-	</head>
-	<body>
-		<div id="wrapper">
-			<div class="card">
-
-				<h1 class="wordmark">Grandiflora</h1>
-				<p class="subtitle">Chelsea &nbsp;&middot;&nbsp; Norfolk, Virginia</p>
-
-				<div class="rule"><div class="rule-diamond"></div></div>
-
-				<p class="farewell">
-					After five years of natural wine, vegetarian cooking, historic rooms, and a garden that fed both guests and songbirds alike, <em>Grandiflora has closed its doors.</em> It was a privilege and a joy to steward this 1912 house and to share it with so many remarkable people. We are deeply grateful for every visit, every bottle opened, every conversation that stretched long into the evening.
-				</p>
-
-				<p class="farewell">
-					This space will live on under new care &mdash; the next chapter is just beginning.
-				</p>
-
-				<p class="farewell-sign">With love and gratitude &mdash; Erin, Jason &amp; Kenny</p>
-
-				<div class="rule"><div class="rule-diamond"></div></div>
-
-				<p class="coming-soon-label">What&rsquo;s Next</p>
-				<p class="coming-soon-text">Something new is coming to 1231 Boissevain Avenue. Stay tuned.</p>
-
-				<a href="https://www.instagram.com/grandiflora_wine_garden/" target="_blank" rel="noopener" class="ig-link">
-					<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-						<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-					</svg>
-					Follow us on Instagram
+<body>
+	<div id="wrapper">
+		<div class="card">
+			<h1 class="wordmark">Grandiflora</h1>
+			<p class="coming-soon-text">
+				is becoming
+			</p>
+			<div>
+				<a href="https://www.velvetanchorinn.com/">
+					<img
+						src="https://images.squarespace-cdn.com/content/v1/69e94502a783a86e696135d1/5ba45921-4a68-42c6-a033-7fc5fe9999a5/Simplified+Printable+Logo+2+%281%29.png?format=750w" />
 				</a>
-
 			</div>
+			<div class="rule">
+				<div class="rule-diamond"></div>
+			</div>
+
+			<p class="farewell">
+				Well friends, it&apos;s been quite the ride. This beloved spot now has new owners with bright ideas and new energy. 
+				We encourage you to welcome and support them as you did for us and we&apos;re wishing the best for The Velvet Anchor
+				and our Chelsea community. If you&apos;d like to keep in touch you can still find us on Instagram.
+				We&apos;re grateful to all our friends and our community &mdash; thanks for the experience of a lifetime.
+			</p>
+
+
+			<p class="coming-soon-label">see you around,</p>
+			<p class="farewell-sign">Erin &amp; Jason</p>
+
+			<div class="rule">
+				<div class="rule-diamond"></div>
+			</div>
+
+
+			<a href="https://www.instagram.com/grandiflora____/" target="_blank" rel="noopener" class="ig-link">
+				<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+					<path
+						d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+				</svg>
+				Instagram
+			</a>
+
 		</div>
-	</body>
+	</div>
+</body>
+
 </html>
